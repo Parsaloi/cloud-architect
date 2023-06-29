@@ -1,0 +1,6 @@
+:q
+./test.dhall
+:q
+exit()
+exit
+2 + 2
