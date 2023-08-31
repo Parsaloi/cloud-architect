@@ -1,0 +1,19 @@
+
+
+// Add the BOM (Bill of Materials) to the dependencies section of the file
+dependencies {
+	implementation(platform("software.amazon.awssdk:bom:2.20.56"))
+
+	// Declare inidividual SDK dependencies without version
+	// ...
+}
+
+// Specify the SDK modules to use in the dependencies section. For example, the following includes a dependency for Amazon Simple Storage Service
+// ...
+dependencies {
+	//...
+	implementation("software.amazon.awssdk.awssdk:s3")
+	//...
+}
+
+// Gradle automatically resolves the correct version of my SDK dependencies by using the information from the BOM
