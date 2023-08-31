@@ -538,3 +538,33 @@ E0831 11:01:30.373855   19889 portforward.go:381] error copying from remote stre
 ```
 
 > What do you mean broken pipe?
+
+```bash
+linkerd viz check
+linkerd-viz
+-----------
+√ linkerd-viz Namespace exists
+√ linkerd-viz ClusterRoles exist
+√ linkerd-viz ClusterRoleBindings exist
+√ tap API server has valid cert
+√ tap API server cert is valid for at least 60 days
+√ tap API service is running
+√ linkerd-viz pods are injected
+√ viz extension pods are running
+√ viz extension proxies are healthy
+‼ viz extension proxies are up-to-date
+    some proxies are not running the current version:
+        * metrics-api-75d56fdd9-2pfzq (stable-2.12.3)
+        * tap-856c669c64-8vx7g (stable-2.12.3)
+        * tap-injector-7db74f49bd-kb274 (stable-2.12.3)
+        * prometheus-c96487d45-dr9dp (stable-2.12.3)
+        * web-5cbd465cf-v7pl4 (stable-2.12.3)
+    see https://linkerd.io/2.12/checks/#l5d-viz-proxy-cp-version for hints
+√ viz extension proxies and cli versions match
+√ prometheus is installed and configured correctly
+√ can initialize the client
+
+viz extension self-check
+
+Status check results are √
+```
