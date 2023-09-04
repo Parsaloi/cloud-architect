@@ -1,0 +1,23 @@
+apiVersion: cluster.x-k8s.io/v1beta2
+kind: Cluster
+metadata:
+  name: capi-ec2
+  namespace: default
+spec:
+  ...
+  controlPlaneRef:
+    ...
+    kind: kubeadmControlPlane
+    name: capi-ec2-control-plane
+  infrastructureRef:
+    kind: AWSCluster
+    name: capi-ec2
+---
+apiVerion: cluster.x-k8s.io/v1beta2
+kind: MachineDeployment
+metadata:
+  name: capi-ec2-md-0
+  namespace: default
+spec:
+  clusterName: capi-ec2
+  replicas: 3
