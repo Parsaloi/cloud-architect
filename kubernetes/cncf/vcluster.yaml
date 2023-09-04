@@ -1,0 +1,21 @@
+apiVersion: infrasture.cluster.x-k8s.io.v1alpha1
+kind: VCluster
+  ...
+spec:
+  ...
+      resourceQuota:
+        enabled: true
+        quota:
+          count/configmaps: 100
+          count/endPoints: 40
+          count/persistentVolumeclaims: 20
+          count/pods: 60
+          count/secrets: 100
+          count/services: 100
+          count/cpu: 6
+          limits.ephemeral-storage: 20Gi
+          limits.memory: 8Gi
+...
+      syncer:
+        ...
+        images: 
